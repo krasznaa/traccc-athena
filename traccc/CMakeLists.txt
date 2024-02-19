@@ -1,4 +1,4 @@
-# Copyright (C) 2023 CERN for the benefit of the ATLAS collaboration
+# Copyright (C) 2023-2024 CERN for the benefit of the ATLAS collaboration
 
 # CMake include(s).
 cmake_minimum_required( VERSION 3.14 )
@@ -14,7 +14,7 @@ endif()
 
 # Set where to get traccc from.
 set( ATLAS_TRACCC_SOURCE
-   "GIT_REPOSITORY;https://github.com/krasznaa/traccc.git;GIT_TAG;origin/AthenaFix-main-20231115"
+   "URL;https://api.github.com/repos/acts-project/traccc/tarball/fd145d8;URL_MD5;32c9f1c2c3f8a44e0f77897559202735"
    CACHE STRING "Source of the traccc code" )
 mark_as_advanced( ATLAS_TRACCC_SOURCE )
 
