@@ -14,6 +14,11 @@ find_package(Athena 25.0.9 REQUIRED)
 # Set up CTest.
 atlas_ctest_setup()
 
+# Disable the undefined behaviour sanitier (in debug builds). It does not work
+# correctly with vecmem.
+string(REPLACE "-fsanitize=undefined" ""
+   CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+
 # Set up the analysis project from the repository.
 atlas_project(USE Athena ${Athena_VERSION})
 
