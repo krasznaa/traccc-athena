@@ -14,7 +14,7 @@ endif()
 
 # Set where to get traccc from.
 set( ATLAS_TRACCC_SOURCE
-   "URL;https://api.github.com/repos/acts-project/traccc/tarball/fd145d8;URL_MD5;32c9f1c2c3f8a44e0f77897559202735"
+   "URL;https://github.com/acts-project/traccc/archive/refs/tags/v0.10.0.tar.gz;URL_MD5;131399d26e3280c4d7f7ca2995efd256"
    CACHE STRING "Source of the traccc code" )
 mark_as_advanced( ATLAS_TRACCC_SOURCE )
 
@@ -27,6 +27,7 @@ set( TRACCC_BUILD_EXAMPLES FALSE CACHE BOOL "Build traccc examples" )
 set( TRACCC_USE_SYSTEM_TBB TRUE CACHE BOOL "Use system TBB" )
 set( TRACCC_USE_SYSTEM_EIGEN3 TRUE CACHE BOOL "Use system Eigen" )
 set( TRACCC_USE_SYSTEM_ACTS TRUE CACHE BOOL "Use system ACTS" )
+set( TRACCC_USE_SYSTEM_VECMEM TRUE CACHE BOOL "Use system VecMem" )
 set( TRACCC_SETUP_GOOGLETEST FALSE CACHE BOOL "Setup GoogleTest" )
 set( ALGEBRA_PLUGINS_USE_SYSTEM_VC TRUE CACHE BOOL "Use system Vc" )
 set( DETRAY_USE_SYSTEM_NLOHMANN TRUE CACHE BOOL "Use system nlohmann_json" )

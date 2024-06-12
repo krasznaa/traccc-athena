@@ -1,19 +1,15 @@
-# Copyright (C) 2023 CERN for the benefit of the ATLAS collaboration
+# Copyright (C) 2023-2024 CERN for the benefit of the ATLAS collaboration
 
 # Set up the project.
 cmake_minimum_required(VERSION 3.20)
-project(traccc_athena VERSION 0.0.1 LANGUAGES CXX)
+project(traccc_athena VERSION 0.1.0 LANGUAGES CXX)
 
 # Use C++17 with CUDA. Athena by default still uses C++14. But traccc needs
 # C++17.
 set(CMAKE_CUDA_STANDARD 17 CACHE STRING "CUDA C++ standard")
 
 # Find the base release.
-find_package(Athena 24.0 REQUIRED)
-
-# Generate a compile_commands.json file by default.
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE CACHE BOOL
-   "Generate compile_commands.json" FORCE)
+find_package(Athena 25.0.9 REQUIRED)
 
 # Set up CTest.
 atlas_ctest_setup()

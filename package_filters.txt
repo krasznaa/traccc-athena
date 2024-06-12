@@ -1,0 +1,4 @@
+# Copyright (C) 2024 CERN for the benefit of the ATLAS collaboration
+#
+# Ignore a possible VSCode build directory.
+- build.*
