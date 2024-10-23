@@ -13,6 +13,7 @@ atlas_ctest_setup()
 # Decide where to take traccc from.
 option(ATLAS_USE_SYSTEM_TRACCC "Use an existing traccc installation" OFF)
 if(ATLAS_USE_SYSTEM_TRACCC)
+   find_package(covfie)
    find_package(traccc REQUIRED)
 else()
    include(cmake/build-traccc.cmake)
