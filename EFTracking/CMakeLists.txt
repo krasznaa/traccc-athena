@@ -10,5 +10,6 @@ find_package( vecmem COMPONENTS CUDA )
 atlas_add_component( EFTracking
    src/*.h src/*.cxx
    DEFINITIONS ALGEBRA_PLUGINS_INCLUDE_ARRAY
-   LINK_LIBRARIES vecmem::core vecmem::cuda traccc::core traccc::cuda traccc::io
+   LINK_LIBRARIES vecmem::core vecmem::cuda traccc::core traccc::io
+                  traccc::device_common traccc::cuda
                   GaudiKernel AthenaBaseComps )

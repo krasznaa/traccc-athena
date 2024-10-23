@@ -4,20 +4,19 @@
 cmake_minimum_required(VERSION 3.20)
 project(traccc_athena VERSION 0.1.0 LANGUAGES CXX)
 
-# Use C++17 with CUDA. Athena by default still uses C++14. But traccc needs
-# C++17.
-set(CMAKE_CUDA_STANDARD 17 CACHE STRING "CUDA C++ standard")
-
 # Find the base release.
-find_package(Athena 25.0.9 REQUIRED)
+find_package(Athena 25.0 REQUIRED)
 
 # Set up CTest.
 atlas_ctest_setup()
 
-# Disable the undefined behaviour sanitier (in debug builds). It does not work
-# correctly with vecmem.
-string(REPLACE "-fsanitize=undefined" ""
-   CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+# Decide where to take traccc from.
+option(ATLAS_USE_SYSTEM_TRACCC "Use an existing traccc installation" OFF)
+if(ATLAS_USE_SYSTEM_TRACCC)
+   find_package(traccc REQUIRED)
+else()
+   include(cmake/build-traccc.cmake)
+endif()
 
 # Set up the analysis project from the repository.
 atlas_project(USE Athena ${Athena_VERSION})
